@@ -284,14 +284,9 @@ int main() {
 	Delay_Ms(100);
 	RCC->APB2PCENR |= RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD | RCC_APB2Periph_AFIO;
 	systick_init();
-	// current_mask = convert_char("W");
   draw_animation(animSegments2, 28, 70, false);
 	Delay_Ms(1000);
-	// draw_string("HAPPY BIRTHDAY", 500, false);
-	// draw_string("GREETINGS FROM UKRAINE $$$", 700, false);
-	// draw_string("The sky is not the limit its just the beginning.", 700, fale);
-	// draw_string("ARTIYA CALLIGRAPHY SCHOOL.", 700, false);
-//   draw_string("GREETINGS FROM UKRAINE HACKADAY $$$", 700, true);/
+	draw_string("GREETINGS FROM UKRAINE $$$", 700, false);
   draw_string("LSS557 ###", 700, true);
 	init_button();
 	// current_mask = 0;
@@ -300,20 +295,14 @@ int main() {
 		asm volatile( "nop" );
 		if (!funDigitalRead(PD1) && systick_cnt > SECRET_DELAY && !long_press_acked) {
 			long_press_acked = true;
-			// draw_string("YOU ARE THE BEST $$$", 700);
-			// draw_string("Eduard Hoffmann was wrong", 700, false);
-			// draw_string("CH32V003 IS FUN", 700, false);
-			draw_string("GREETINGS FROM UKRAINE $$$", 700, true);
+		  draw_string("The sky is not the limit its just the beginning.", 700, true);
       Delay_Ms(1);
 		}
     if (SysTick->CNT >= last_active + INACTIVE_DELAY) {
       last_active = SysTick->CNT;
       draw_animation(animSegments1, 7, 70, true);
       Delay_Ms(1000);
-    //   draw_string("GREETINGS FROM UKRAINE $$$", 700, true);
-	  draw_string("LSS557 ###", 700, true);
-    //   draw_string("ARTIYA CALLIGRAPHY SCHOOL.", 700, true);
-      // draw_string("GREETINGS FROM UKRAINE HACKADAY $$$", 700, true);
+      draw_string("GREETINGS FROM UKRAINE $$$", 700, true);
     }
 	}
 }
