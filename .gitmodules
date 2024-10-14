@@ -1,0 +1,6 @@
+[submodule "software/ch32v003fun"]
+	path = software/ch32v003fun
+	url = https://github.com/cnlohr/ch32v003fun
+[submodule "software/rv003usb"]
+	path = software/rv003usb
+	url = https://github.com/cnlohr/rv003usb
