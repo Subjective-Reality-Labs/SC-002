@@ -287,15 +287,14 @@ int main() {
   draw_animation(animSegments2, 28, 70, false);
 	Delay_Ms(1000);
 	draw_string("GREETINGS FROM UKRAINE $$$", 700, false);
-  draw_string("LSS557 ###", 700, true);
 	init_button();
 	// current_mask = 0;
 
 	while(1) {
 		asm volatile( "nop" );
 		if (!funDigitalRead(PD1) && systick_cnt > SECRET_DELAY && !long_press_acked) {
-			long_press_acked = true;
-		  draw_string("The sky is not the limit its just the beginning.", 700, true);
+      long_press_acked = true;
+      draw_string("The sky is not the limit its just the beginning.", 700, true);
       Delay_Ms(1);
 		}
     if (SysTick->CNT >= last_active + INACTIVE_DELAY) {
